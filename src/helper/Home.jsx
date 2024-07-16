@@ -7,6 +7,7 @@ import AddPatient from "../components/AddPatient";
 const Home = () => {
   const [doctors, setDoctors] = useState(DataDoctors);
   const [patients, setPatients] = useState(Data);
+  const [selectedDoctorId, setSelectedDoctorId] = useState(null);
 
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
@@ -17,6 +18,8 @@ const Home = () => {
         setDoctors={setDoctors}
         patients={patients}
         setPatients={setPatients}
+        selectedDoctorId={selectedDoctorId}
+        setSelectedDoctorId={setSelectedDoctorId}
       />
       <AddPatient name={name} setName={setName} date={date} setDate={setDate} />
     </div>

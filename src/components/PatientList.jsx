@@ -1,39 +1,31 @@
 import { useState } from "react";
-import Data from "../helper/data";
 
-const PatientList = ({ doctors, setDoctors, patients, setPatients }) => {
-  const [app, setApp] = useState(false);
-
-  const handleHomePage = () => {
-    setDoctors(Data);
-    setApp((app) => !app);
+const PatientList = ({
+  doctors,
+  setDoctors,
+  patients,
+  setPatients,
+  selectedDoctorId,
+  setSelectedDoctorId,
+}) => {
+  const handleAppointment = (id) => {
+    const actualDoctor = doctors.filter((doctor) => doctor.id === id);
+    setDoctors(actualDoctor);
+    setSelectedDoctorId(id);
   };
-
-  const handleAppointments = (id) => {
-    const actualDoctors = doctors.filter((doctor) => doctor.id === id);
-    setDoctors(actualDoctors);
-    setApp((app) => !app);
-  };
-
   return (
     <div className="container">
       <div className="doctors_container">
-        <button className="homepage" onClick={handleHomePage}>
-          Homepage
-        </button>
+        <button className="homepage">Homepage</button>
         {doctors.map((doctor) => (
           <div className="doctors" key={doctor.id}>
             <img src={doctor.image} alt={doctor.doctor} />
             <div className="doctors_info">
               <h3>{doctor.doctor}</h3>
               <p>{doctor.description}</p>
-              {app ? (
-                " "
-              ) : (
-                <button onClick={() => handleAppointments(doctor.id)}>
-                  Appointments
-                </button>
-              )}
+              <button onClick={() => handleAppointment(doctor.id)}>
+                Appointments
+              </button>
             </div>
           </div>
         ))}
