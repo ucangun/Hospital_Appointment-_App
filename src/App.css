@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --color-mint-green: #98ff98;
+  --color-sky-blue: #87ceeb;
+  --color-teal: #008080;
+  --color-light-blue: #add8e6;
+  --color-seafoam-green: #2e8b57;
+  --color-cerulean-blue: #007ba7;
+  --color-emerald-green: #50c878;
+  --color-powder-blue: #b0e0e6;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray: #333;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  background-color: var(--color-cerulean-blue);
+  padding: 1rem;
+  max-width: 80rem;
+  margin: 5rem auto;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 3rem;
+}
+
+.doctors_container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.doctors {
+  background-color: var(--color-powder-blue);
+  max-width: 25rem;
+  height: 20rem;
+  border-radius: 1rem;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.doctors img {
+  width: 40%;
+  height: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.doctors .doctors_info {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.doctors .doctors_info button {
+  background-color: var(--color-emerald-green);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
