@@ -1,7 +1,3 @@
-import { useState } from "react";
-import Data from "../helper/data";
-import DataDoctors from "../helper/doctor";
-
 const AddPatient = ({
   name,
   setName,
