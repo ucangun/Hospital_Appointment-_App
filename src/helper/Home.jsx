@@ -8,6 +8,7 @@ const Home = () => {
   const [doctors, setDoctors] = useState(DataDoctors);
   const [patients, setPatients] = useState(Data);
   const [selectedDoctorId, setSelectedDoctorId] = useState(null);
+  const [isCompleted, setIsCompleted] = useState(false);
 
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
@@ -20,6 +21,8 @@ const Home = () => {
         setPatients={setPatients}
         selectedDoctorId={selectedDoctorId}
         setSelectedDoctorId={setSelectedDoctorId}
+        isCompleted={isCompleted}
+        setIsCompleted={setIsCompleted}
       />
       {selectedDoctorId && (
         <AddPatient

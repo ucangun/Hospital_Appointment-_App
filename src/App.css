@@ -149,3 +149,8 @@ form {
   cursor: pointer;
   border-radius: 0.5rem;
 }
+
+.completed {
+  background-color: var(--color-teal);
+  text-decoration: line-through;
+}

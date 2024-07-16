@@ -8,6 +8,8 @@ const PatientList = ({
   setPatients,
   selectedDoctorId,
   setSelectedDoctorId,
+  isCompleted,
+  setIsCompleted,
 }) => {
   const handleAppointment = (id, doctorName) => {
     const selectedDoctor = doctors.find((doc) => doc.id === id);
@@ -30,6 +32,14 @@ const PatientList = ({
   const handleDelete = (id) => {
     const actualPatients = patients.filter((patient) => patient.id !== id);
     setPatients(actualPatients);
+  };
+
+  const handleComplete = (id) => {
+    const actualPatients = patients.map((patient) =>
+      patient.id === id ? { ...patient, complete: !patient.complete } : patient
+    );
+    setPatients(actualPatients);
+    setIsCompleted(!isCompleted);
   };
 
   return (
@@ -59,7 +69,10 @@ const PatientList = ({
       <div className="patients_container">
         <h1>Patient List</h1>
         {patients.map((patient) => (
-          <div className="patients_status" key={patient.id}>
+          <div
+            className={`patients_status ${isCompleted ? "completed" : ""}`}
+            key={patient.id}
+          >
             <div className="patients_info">
               <p>{patient.text}</p>
               <p>{patient.day}</p>
@@ -67,7 +80,9 @@ const PatientList = ({
             </div>
             <div className="patients_button">
               <button onClick={() => handleDelete(patient.id)}>delete</button>
-              <button>complete</button>
+              <button onClick={() => handleComplete(patient.id)}>
+                complete
+              </button>
             </div>
           </div>
         ))}
