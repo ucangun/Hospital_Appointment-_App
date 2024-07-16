@@ -3,6 +3,7 @@ import PatientList from "../components/PatientList";
 import Data from "../helper/data";
 import DataDoctors from "../helper/doctor";
 import AddPatient from "../components/AddPatient";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
   const [doctors, setDoctors] = useState(DataDoctors);
@@ -14,6 +15,7 @@ const Home = () => {
   const [date, setDate] = useState("");
   return (
     <div>
+      <Navbar />
       <PatientList
         doctors={doctors}
         setDoctors={setDoctors}
