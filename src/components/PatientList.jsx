@@ -3,6 +3,8 @@ import Data from "../helper/data";
 
 const PatientList = ({ doctors, setDoctors }) => {
   const [app, setApp] = useState(false);
+  const [name, setName] = useState("");
+  const [date, setDate] = useState("");
 
   const handleHomePage = () => {
     setDoctors(Data);
@@ -13,6 +15,23 @@ const PatientList = ({ doctors, setDoctors }) => {
     const actualDoctors = doctors.filter((doctor) => doctor.id === id);
     setDoctors(actualDoctors);
     setApp((app) => !app);
+  };
+
+  const handleAddPatient = (e, doctor) => {
+    e.preventDefault();
+    if (!name || !date) return;
+
+    const newPatient = {
+      ...doctor,
+      id: crypto.randomUUID(),
+      text: name,
+      day: date,
+    };
+
+    const actualDoctors = [...doctors, newPatient];
+    setDoctors(actualDoctors);
+    setName("");
+    setDate("");
   };
 
   return (
@@ -27,13 +46,18 @@ const PatientList = ({ doctors, setDoctors }) => {
             <div className="doctors_info">
               <h3>{doctor.doctor}</h3>
               <p>{doctor.description}</p>
-              <button onClick={() => handleAppointments(doctor.id)}>
-                Appointments
-              </button>
+              {app ? (
+                " "
+              ) : (
+                <button onClick={() => handleAppointments(doctor.id)}>
+                  Appointments
+                </button>
+              )}
             </div>
           </div>
         ))}
       </div>
+
       <div className="patients_container">
         <h1>Patient List</h1>
         {doctors.map((doctor) => (
@@ -50,21 +74,33 @@ const PatientList = ({ doctors, setDoctors }) => {
           </div>
         ))}
       </div>
-      {app && (
-        <form>
-          <div className="formAdd">
-            <label htmlFor="patientName">Patient Name</label>
-            <input type="text" id="patientName" />
-          </div>
-          <div className="formAdd">
-            <label htmlFor="date">Day & Time</label>
-            <input type="datetime-local" id="date" />
-          </div>
-          <button type="submit" className="btnSubmit">
-            Add Patient
-          </button>
-        </form>
-      )}
+
+      {app &&
+        doctors.map((doctor) => (
+          <form key={doctor.id} onSubmit={(e) => handleAddPatient(e, doctor)}>
+            <div className="formAdd">
+              <label htmlFor="patientName">Patient Name</label>
+              <input
+                type="text"
+                id="patientName"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+            <div className="formAdd">
+              <label htmlFor="date">Day & Time</label>
+              <input
+                type="datetime-local"
+                id="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+              />
+            </div>
+            <button type="submit" className="btnSubmit">
+              Add Patient
+            </button>
+          </form>
+        ))}
     </div>
   );
 };
