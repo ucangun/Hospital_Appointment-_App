@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Hospital Appointment App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://okudurhospital.netlify.app/
 
-## Available Scripts
+## Project Purpose
 
-In the project directory, you can run:
+The primary objective of this project is to develop a practical hospital appointment application that helps manage patients’ appointments. The “Okudur Hospital Appointment App” allows users to add, view, check, and delete patients’ appointments. This project focuses on understanding and implementing state management using useState, handling events, and storing data using Local Storage in a React application.
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+|--Okudur_Hospital_Appointment_App(folder)
+|
+├── public
+│     └── index.html
+├── src
+│    
+│    ├── assets
+│    │       └──  [images] 
+│    │
+│    ├── components
+│    │       ├── Navbar.jsx
+│    │       ├── PatientList.jsx
+│    │       └── AddPatient.jsx
+│    ├── helper
+│    │       ├── Home.jsx
+│    │       ├── data.js
+│    │       └── doctor.js
+│    │       
+│    ├── App.js
+│    ├── App.css
+│    ├── index.js
+│    └── index.css
+├── .gitignore
+├── package-lock.json
+├── package.json
+└── README.md
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Project Features
+- **Add Patients**: Users can add new patients, which are saved as objects in the state and displayed in a list.
+- **View Patients**: Patients are displayed with their current status (completed or not).
+- **Check/Uncheck Patients**: Users can mark patients as completed or uncompleted, with the UI updating accordingly.
+- **Delete Patients**: Users can remove patients from the list.
+- **Local Storage**: Patients are persisted in Local Storage, ensuring that they remain even after the page is refreshed.
+- **Responsive Design**: The app is styled using CSS to ensure it is responsive and user-friendly.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Outcome
 
-### `npm run build`
+![Hospital Appointment App](https://github.com/user-attachments/assets/a9310bfc-5854-469a-b520-ea81295f4405)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies Used
+- **HTML**: Minimal usage for structuring the React app.
+- **CSS**: Employed for styling and enhancing the visual aspects of the app.
+- **JavaScript (ReactJS)**: Utilized for building the user interface. Key React features include:
+  - State management using `useState`
+  - Event handling (`onClick`, `onChange`)
+  - Local Storage for data persistence
+  - Mapping through state arrays to dynamically render components
+-- **date-fns**: Utilized for formatting dates throughout the application. 
+ 
 
-### `npm run eject`
+### At the end of the project, will be able to;
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This project has significantly enhanced my understanding and mastery of React state management, event handling, and data persistence using Local Storage. By developing the “Okudur Hospital Appointment App,” I have gained practical experience in:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Managing state with `useState` in React components.
+- Handling user interactions such as adding, checking, and deleting tasks.
+- Implementing persistent data storage using Local Storage in a React application.
+- Formatting dates using date-fns to ensure consistency and readability.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+These skills are essential for developing more complex and user-interactive applications in the future.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<p align="center"> 🏥 Happy Coding! 🩺 </p>
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
