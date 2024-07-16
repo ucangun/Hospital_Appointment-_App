@@ -17,16 +17,17 @@ const PatientList = ({
 
     setSelectedDoctorId(doctorName);
 
-    const actualPatients = patients.filter(
+    const allPatients = JSON.parse(localStorage.getItem("patients")) || Data;
+    const actualPatients = allPatients.filter(
       (patient) => patient.doctor === doctorName
     );
     setPatients(actualPatients);
-    localStorage.setItem("patients", JSON.stringify(actualPatients));
   };
 
   const handleHomePage = () => {
     setDoctors(DataDoctors);
-    setPatients(JSON.parse(localStorage.getItem("patients")) || Data);
+    const allPatients = JSON.parse(localStorage.getItem("patients")) || Data;
+    setPatients(allPatients);
     setSelectedDoctorId(null);
   };
 

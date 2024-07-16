@@ -19,7 +19,8 @@ const AddPatient = ({
       doctor: selectedDoctorId,
     };
 
-    const actualPatients = [...patients, newPatient];
+    const allPatients = JSON.parse(localStorage.getItem("patients")) || [];
+    const actualPatients = [...allPatients, newPatient];
     setPatients(actualPatients);
     localStorage.setItem("patients", JSON.stringify(actualPatients));
 

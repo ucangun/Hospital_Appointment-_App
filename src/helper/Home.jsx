@@ -7,14 +7,21 @@ import Navbar from "../components/Navbar";
 
 const Home = () => {
   const [doctors, setDoctors] = useState(DataDoctors);
-  const [patients, setPatients] = useState(
-    () => JSON.parse(localStorage.getItem("patients")) || Data
-  );
+  const [patients, setPatients] = useState(() => {
+    try {
+      const storedPatients = localStorage.getItem("patients");
+      return storedPatients ? JSON.parse(storedPatients) : Data;
+    } catch (error) {
+      console.error("Geçersiz JSON verisi:", error);
+      return Data;
+    }
+  });
   const [selectedDoctorId, setSelectedDoctorId] = useState(null);
   const [isCompleted, setIsCompleted] = useState(false);
 
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
+
   return (
     <div>
       <Navbar />
