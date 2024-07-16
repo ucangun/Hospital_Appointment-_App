@@ -7,6 +7,7 @@ const AddPatient = ({
   setPatients,
   selectedDoctorId,
 }) => {
+  // Handle form submission to add a new patient
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name || !date) return;

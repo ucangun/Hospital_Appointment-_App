@@ -6,7 +6,9 @@ import AddPatient from "../components/AddPatient";
 import Navbar from "../components/Navbar";
 
 const Home = () => {
+  // State to manage the list of doctors
   const [doctors, setDoctors] = useState(DataDoctors);
+  // State to manage the list of patients
   const [patients, setPatients] = useState(() => {
     try {
       const storedPatients = localStorage.getItem("patients");
@@ -16,9 +18,12 @@ const Home = () => {
       return Data;
     }
   });
+  // State to manage the selected doctor's ID
   const [selectedDoctorId, setSelectedDoctorId] = useState(null);
+  // State to manage the completion status
   const [isCompleted, setIsCompleted] = useState(false);
 
+  // State to manage the new patient's name and date
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
 
