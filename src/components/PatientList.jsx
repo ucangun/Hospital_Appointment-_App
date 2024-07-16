@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Data from "../helper/data";
+import DataDoctors from "../helper/doctor";
 
 const PatientList = ({
   doctors,
@@ -20,10 +22,20 @@ const PatientList = ({
     setPatients(actualPatients);
   };
 
+  const handleHomePage = () => {
+    setDoctors(DataDoctors);
+    setPatients(Data);
+    setSelectedDoctorId(null);
+  };
+
   return (
     <div className="container">
       <div className="doctors_container">
-        {selectedDoctorId && <button className="homepage">Homepage</button>}
+        {selectedDoctorId && (
+          <button className="homepage" onClick={handleHomePage}>
+            Homepage
+          </button>
+        )}
         {doctors.map((doctor) => (
           <div className="doctors" key={doctor.id}>
             <img src={doctor.image} alt={doctor.doctor} />
