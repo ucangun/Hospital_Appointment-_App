@@ -2,13 +2,14 @@
 
 :root {
   --color-mint-green: #98ff98;
+  --color-emerald-green: #50c878;
+  --color-emerald-green-dark: #48b46c;
+  --color-cerulean-blue: #007ba7;
+  --color-powder-blue: #b0e0e6;
   --color-sky-blue: #87ceeb;
   --color-teal: #008080;
   --color-light-blue: #add8e6;
   --color-seafoam-green: #2e8b57;
-  --color-cerulean-blue: #007ba7;
-  --color-emerald-green: #50c878;
-  --color-powder-blue: #b0e0e6;
   --color-black: #000000;
   --color-white: #ffffff;
   --color-gray: #333;
@@ -56,7 +57,7 @@ nav h1 {
 .container {
   background-color: var(--color-white);
   border-radius: 1rem;
-  padding: 2rem 5rem 2rem 0rem;
+  padding: 3rem 3rem 2rem 0rem;
   max-width: 80rem;
   margin: 1rem auto;
   display: grid;
@@ -93,47 +94,60 @@ nav h1 {
   max-width: 30rem;
   height: 20rem;
   background-color: var(--color-powder-blue);
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
   cursor: pointer;
 
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
 
 .doctors img {
   width: 40%;
   height: 100%;
-  border-radius: 1rem;
+  border-radius: 1rem 0 0 1rem;
   object-fit: cover;
 }
 
 .doctors .doctors_info {
-  padding: 2.5rem;
+  padding: 0rem 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 2rem;
+}
+.doctors .doctors_info h3 {
+  align-self: center;
 }
 
 .doctors .doctors_info button {
+  font-size: 0.9rem;
   background-color: var(--color-emerald-green);
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
+  transition: all 0.5s;
+}
+
+.doctors .doctors_info button:hover {
+  background-color: var(--color-emerald-green-dark);
 }
 
 /* ---------------------------------- */
 /*         PATIENTS CONTAINER         */
 /* ---------------------------------- */
 
-.patients_container h1 {
+.patients_container h2 {
   text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
 }
 
 .patients_status {
   background-color: var(--color-mint-green);
-  padding: 0.1rem 0.8rem;
+  padding: 1rem;
   border-radius: 1rem;
   display: flex;
   justify-content: space-between;
@@ -144,14 +158,35 @@ nav h1 {
 }
 
 .patients_info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.patient_name {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.patient_date {
+  font-size: 0.9rem;
+}
+
+.patient_doctor {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-teal);
 }
 
 .patients_button button {
   border: none;
   padding: 0.5rem 1rem;
-  margin-left: 0.3rem;
+  margin-right: 0.3rem;
   cursor: pointer;
   border-radius: 0.5rem;
+  background-color: var(--color-cerulean-blue);
+  color: var(--color-white);
+  font-size: 0.9rem;
 }
 
 .completed {

@@ -30,8 +30,14 @@ const PatientList = ({
   };
 
   const handleDelete = (id) => {
-    const actualPatients = patients.filter((patient) => patient.id !== id);
-    setPatients(actualPatients);
+    if (
+      window.confirm(
+        "Are you sure you want to delete patient appointment information?"
+      )
+    ) {
+      const actualPatients = patients.filter((patient) => patient.id !== id);
+      setPatients(actualPatients);
+    }
   };
 
   const handleComplete = (id) => {
@@ -67,22 +73,22 @@ const PatientList = ({
       </div>
 
       <div className="patients_container">
-        <h1>Patient List</h1>
+        <h2>Patient List</h2>
         {patients.map((patient) => (
           <div
             className={`patients_status ${isCompleted ? "completed" : ""}`}
             key={patient.id}
           >
             <div className="patients_info">
-              <p>{patient.text}</p>
-              <p>{patient.day}</p>
-              <p>{patient.doctor}</p>
+              <p className="patient_name">{patient.text}</p>
+              <p className="patient_date">{patient.day}</p>
+              <p className="patient_doctor">{patient.doctor}</p>
             </div>
             <div className="patients_button">
-              <button onClick={() => handleDelete(patient.id)}>delete</button>
               <button onClick={() => handleComplete(patient.id)}>
                 complete
               </button>
+              <button onClick={() => handleDelete(patient.id)}>delete</button>
             </div>
           </div>
         ))}
