@@ -1,16 +1,26 @@
 import { useState } from "react";
+import Data from "../helper/data";
 
 const PatientList = ({ doctors, setDoctors }) => {
   const [app, setApp] = useState(true);
+
+  const handleHomePage = () => {
+    setDoctors(Data);
+    setApp((app) => !app);
+  };
 
   const handleAppointments = (id) => {
     const actualDoctors = doctors.filter((doctor) => doctor.id === id);
     setDoctors(actualDoctors);
     setApp((app) => !app);
   };
+
   return (
     <div className="container">
       <div className="doctors_container">
+        <button className="homepage" onClick={handleHomePage}>
+          Homepage
+        </button>
         {doctors.map((doctor) => (
           <div className="doctors" key={doctor.id}>
             <img src={doctor.image} alt={doctor.doctor} />
