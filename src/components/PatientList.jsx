@@ -8,11 +8,19 @@ const PatientList = ({
   selectedDoctorId,
   setSelectedDoctorId,
 }) => {
-  const handleAppointment = (id) => {
-    const actualDoctor = doctors.filter((doctor) => doctor.id === id);
-    setDoctors(actualDoctor);
+  const handleAppointment = (id, doctorName) => {
+    const selectedDoctor = doctors.find((doc) => doc.id === id);
+    console.log(selectedDoctor);
+    setDoctors([selectedDoctor]);
+
     setSelectedDoctorId(id);
+
+    const actualPatients = patients.filter(
+      (patient) => patient.doctor === doctorName
+    );
+    setPatients(actualPatients);
   };
+
   return (
     <div className="container">
       <div className="doctors_container">
@@ -23,7 +31,9 @@ const PatientList = ({
             <div className="doctors_info">
               <h3>{doctor.doctor}</h3>
               <p>{doctor.description}</p>
-              <button onClick={() => handleAppointment(doctor.id)}>
+              <button
+                onClick={() => handleAppointment(doctor.id, doctor.doctor)}
+              >
                 Appointments
               </button>
             </div>
