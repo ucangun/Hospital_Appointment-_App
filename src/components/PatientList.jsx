@@ -10,7 +10,6 @@ const PatientList = ({
 }) => {
   const handleAppointment = (id, doctorName) => {
     const selectedDoctor = doctors.find((doc) => doc.id === id);
-    console.log(selectedDoctor);
     setDoctors([selectedDoctor]);
 
     setSelectedDoctorId(id);
@@ -24,7 +23,7 @@ const PatientList = ({
   return (
     <div className="container">
       <div className="doctors_container">
-        <button className="homepage">Homepage</button>
+        {selectedDoctorId && <button className="homepage">Homepage</button>}
         {doctors.map((doctor) => (
           <div className="doctors" key={doctor.id}>
             <img src={doctor.image} alt={doctor.doctor} />
@@ -40,6 +39,7 @@ const PatientList = ({
           </div>
         ))}
       </div>
+
       <div className="patients_container">
         <h1>Patient List</h1>
         {patients.map((patient) => (

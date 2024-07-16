@@ -21,7 +21,16 @@ const Home = () => {
         selectedDoctorId={selectedDoctorId}
         setSelectedDoctorId={setSelectedDoctorId}
       />
-      <AddPatient name={name} setName={setName} date={date} setDate={setDate} />
+      {selectedDoctorId && (
+        <AddPatient
+          name={name}
+          setName={setName}
+          date={date}
+          setDate={setDate}
+          selectedDoctorId={selectedDoctorId}
+          setSelectedDoctorId={setSelectedDoctorId}
+        />
+      )}
     </div>
   );
 };
