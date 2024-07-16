@@ -9,7 +9,7 @@ const DataDoctors = [
   {
     id: 1,
     image: `${image1}`,
-    doctor: "Dr. Alice Walker",
+    doctor: "Dr. Jacob Martinez",
     description:
       "Dr. Alice Walker specializes in internal medicine with a focus on digestive disorders.",
   },
@@ -30,21 +30,22 @@ const DataDoctors = [
   {
     id: 4,
     image: `${image4}`,
-    doctor: "Dr. James Black",
+    doctor: "Dr. Olivia Davis",
     description:
       "Dr. James Black specializes in orthopedic surgery and sports medicine.",
   },
   {
     id: 5,
     image: `${image5}`,
-    doctor: "Dr. Olivia Davis",
+    doctor: "Dr. James Black",
+
     description:
       "Dr. Olivia Davis is a neurologist known for his research in neurological disorders.",
   },
   {
     id: 6,
     image: `${image6}`,
-    doctor: "Dr. Jacob Martinez",
+    doctor: "Dr. Alice Walker",
     description:
       "Dr. Jacob Martinez specializes in dermatology and skincare treatments.",
   },
