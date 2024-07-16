@@ -22,6 +22,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  color: var(--color-gray);
 }
 
 /* ---------------------------------- */
@@ -52,49 +53,13 @@ nav h1 {
 /* ---------------------------------- */
 
 .container {
-  background-color: var(--color-cerulean-blue);
+  background-color: var(--color-white);
   padding: 1rem 2rem 1rem 1rem;
   max-width: 80rem;
-  margin: 5rem auto;
+  margin: 1rem auto;
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 50% 50%;
   gap: 1rem;
-}
-
-form {
-  width: 25rem;
-  height: 20rem;
-  background-color: var(--color-seafoam-green);
-  border-radius: 1rem;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.formAdd {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.formAdd input {
-  width: 100%;
-
-  padding: 0.5rem;
-  font-size: 0.8rem;
-  border-radius: 0.2rem;
-  border: none;
-}
-
-.btnSubmit {
-  border: none;
-  padding: 0.7rem 1.2rem;
-  border-radius: 0.8rem;
-  cursor: pointer;
 }
 
 /* ---------------------------------- */
@@ -106,6 +71,7 @@ form {
   padding: 1rem;
   width: 30%;
   cursor: pointer;
+  text-align: center;
 }
 
 .doctors_container {
@@ -182,4 +148,44 @@ form {
 .completed {
   background-color: var(--color-teal);
   text-decoration: line-through;
+}
+
+/* ---------------------------------- */
+/*                FORM                */
+/* ---------------------------------- */
+
+form {
+  width: 25rem;
+  height: 20rem;
+  background-color: var(--color-seafoam-green);
+  border-radius: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.formAdd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.formAdd input {
+  width: 100%;
+
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 0.2rem;
+  border: none;
+}
+
+.btnSubmit {
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
 }
