@@ -18,15 +18,23 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/* ---------------------------------- */
+/*              CONTAINER             */
+/* ---------------------------------- */
+
 .container {
   background-color: var(--color-cerulean-blue);
-  padding: 1rem;
+  padding: 1rem 2rem 1rem 1rem;
   max-width: 80rem;
   margin: 5rem auto;
   display: grid;
   grid-template-columns: 40% 60%;
-  gap: 3rem;
+  gap: 1rem;
 }
+
+/* ---------------------------------- */
+/*          DOCTORS CONTAINER         */
+/* ---------------------------------- */
 
 .doctors_container {
   display: flex;
@@ -66,4 +74,35 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
+}
+
+/* ---------------------------------- */
+/*         PATIENTS CONTAINER         */
+/* ---------------------------------- */
+
+.patients_container h1 {
+  text-align: center;
+}
+
+.patients_status {
+  background-color: var(--color-mint-green);
+  padding: 0.1rem 0.8rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  cursor: pointer;
+}
+
+.patients_info {
+}
+
+.patients_button button {
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-left: 0.3rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
 }

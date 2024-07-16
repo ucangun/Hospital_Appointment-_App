@@ -1,4 +1,13 @@
-const PatientList = ({ doctors }) => {
+import { useState } from "react";
+
+const PatientList = ({ doctors, setDoctors }) => {
+  const [app, setApp] = useState(true);
+
+  const handleAppointments = (id) => {
+    const actualDoctors = doctors.filter((doctor) => doctor.id === id);
+    setDoctors(actualDoctors);
+    setApp((app) => !app);
+  };
   return (
     <div className="container">
       <div className="doctors_container">
@@ -8,14 +17,31 @@ const PatientList = ({ doctors }) => {
             <div className="doctors_info">
               <h3>{doctor.doctor}</h3>
               <p>{doctor.description}</p>
-              <button>Appointments</button>
+              <button onClick={() => handleAppointments(doctor.id)}>
+                Appointments
+              </button>
             </div>
           </div>
         ))}
       </div>
-      <div className="patients_container">
-        <h1>sadkjgnvsa d</h1>
-      </div>
+      {app && (
+        <div className="patients_container">
+          <h1>Patient List</h1>
+          {doctors.map((doctor) => (
+            <div className="patients_status" key={doctor.id}>
+              <div className="patients_info">
+                <p>{doctor.text}</p>
+                <p>{doctor.day}</p>
+                <p>{doctor.doctor}</p>
+              </div>
+              <div className="patients_button">
+                <button>delete</button>
+                <button>complete</button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
