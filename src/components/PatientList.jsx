@@ -12,8 +12,8 @@ const PatientList = ({
   setIsCompleted,
 }) => {
   const handleAppointment = (id, doctorName) => {
-    const selectedDoctor = doctors.find((doc) => doc.id === id);
-    setDoctors([selectedDoctor]);
+    const selectedDoctor = doctors.filter((doc) => doc.id === id);
+    setDoctors(selectedDoctor);
 
     setSelectedDoctorId(doctorName);
 
