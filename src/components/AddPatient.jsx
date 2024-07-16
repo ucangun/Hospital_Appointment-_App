@@ -1,3 +1,5 @@
+import { format } from "date-fns";
+
 const AddPatient = ({
   name,
   setName,
@@ -12,10 +14,12 @@ const AddPatient = ({
     e.preventDefault();
     if (!name || !date) return;
 
+    const formattedDate = format(new Date(date), "MMM do 'at' h:mma");
+
     const newPatient = {
       id: crypto.randomUUID(),
       text: name,
-      day: date,
+      day: formattedDate,
       completed: false,
       doctor: selectedDoctorId,
     };
