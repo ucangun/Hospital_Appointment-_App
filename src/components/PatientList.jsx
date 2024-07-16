@@ -42,7 +42,9 @@ const PatientList = ({
 
   const handleComplete = (id) => {
     const actualPatients = patients.map((patient) =>
-      patient.id === id ? { ...patient, complete: !patient.complete } : patient
+      patient.id === id
+        ? { ...patient, completed: !patient.completed }
+        : patient
     );
     setPatients(actualPatients);
     setIsCompleted(!isCompleted);
@@ -76,7 +78,9 @@ const PatientList = ({
         <h2>Patient List</h2>
         {patients.map((patient) => (
           <div
-            className={`patients_status ${isCompleted ? "completed" : ""}`}
+            className={`patients_status ${
+              patient.completed ? "completed" : ""
+            }`}
             key={patient.id}
           >
             <div className="patients_info">
@@ -86,9 +90,9 @@ const PatientList = ({
             </div>
             <div className="patients_button">
               <button onClick={() => handleComplete(patient.id)}>
-                complete
+                {patient.completed ? "Undo" : "Complete"}
               </button>
-              <button onClick={() => handleDelete(patient.id)}>delete</button>
+              <button onClick={() => handleDelete(patient.id)}>Delete</button>
             </div>
           </div>
         ))}
