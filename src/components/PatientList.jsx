@@ -2,7 +2,7 @@ import { useState } from "react";
 import Data from "../helper/data";
 
 const PatientList = ({ doctors, setDoctors }) => {
-  const [app, setApp] = useState(true);
+  const [app, setApp] = useState(false);
 
   const handleHomePage = () => {
     setDoctors(Data);
@@ -11,6 +11,7 @@ const PatientList = ({ doctors, setDoctors }) => {
   const handleAppointments = (id) => {
     const actualDoctors = doctors.filter((doctor) => doctor.id === id);
     setDoctors(actualDoctors);
+    setApp((app) => !app);
   };
 
   return (
@@ -48,19 +49,21 @@ const PatientList = ({ doctors, setDoctors }) => {
           </div>
         ))}
       </div>
-      <form>
-        <div className="formAdd">
-          <label htmlFor="patientName">Patient Name</label>
-          <input type="text" id="patientName" />
-        </div>
-        <div className="formAdd">
-          <label htmlFor="date">Day & Time</label>
-          <input type="datetime-local" id="date" />
-        </div>
-        <button type="submit" className="btnSubmit">
-          Add Patient
-        </button>
-      </form>
+      {app && (
+        <form>
+          <div className="formAdd">
+            <label htmlFor="patientName">Patient Name</label>
+            <input type="text" id="patientName" />
+          </div>
+          <div className="formAdd">
+            <label htmlFor="date">Day & Time</label>
+            <input type="datetime-local" id="date" />
+          </div>
+          <button type="submit" className="btnSubmit">
+            Add Patient
+          </button>
+        </form>
+      )}
     </div>
   );
 };
