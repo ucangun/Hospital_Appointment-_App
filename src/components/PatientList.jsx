@@ -27,6 +27,11 @@ const PatientList = ({
     setSelectedDoctorId(null);
   };
 
+  const handleDelete = (id) => {
+    const actualPatients = patients.filter((patient) => patient.id !== id);
+    setPatients(actualPatients);
+  };
+
   return (
     <div className="container">
       <div className="doctors_container">
@@ -61,7 +66,7 @@ const PatientList = ({
               <p>{patient.doctor}</p>
             </div>
             <div className="patients_button">
-              <button>delete</button>
+              <button onClick={() => handleDelete(patient.id)}>delete</button>
               <button>complete</button>
             </div>
           </div>
