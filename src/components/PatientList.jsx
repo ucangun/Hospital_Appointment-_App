@@ -6,6 +6,7 @@ const PatientList = ({ doctors, setDoctors }) => {
 
   const handleHomePage = () => {
     setDoctors(Data);
+    setApp((app) => !app);
   };
 
   const handleAppointments = (id) => {
