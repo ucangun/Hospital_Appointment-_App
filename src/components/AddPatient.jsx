@@ -21,6 +21,7 @@ const AddPatient = ({
 
     const actualPatients = [...patients, newPatient];
     setPatients(actualPatients);
+    localStorage.setItem("patients", JSON.stringify(actualPatients));
 
     setName("");
     setDate("");

@@ -21,11 +21,12 @@ const PatientList = ({
       (patient) => patient.doctor === doctorName
     );
     setPatients(actualPatients);
+    localStorage.setItem("patients", JSON.stringify(actualPatients));
   };
 
   const handleHomePage = () => {
     setDoctors(DataDoctors);
-    setPatients(Data);
+    setPatients(JSON.parse(localStorage.getItem("patients")) || Data);
     setSelectedDoctorId(null);
   };
 
@@ -37,6 +38,7 @@ const PatientList = ({
     ) {
       const actualPatients = patients.filter((patient) => patient.id !== id);
       setPatients(actualPatients);
+      localStorage.setItem("patients", JSON.stringify(actualPatients));
     }
   };
 
@@ -48,6 +50,7 @@ const PatientList = ({
     );
     setPatients(actualPatients);
     setIsCompleted(!isCompleted);
+    localStorage.setItem("patients", JSON.stringify(actualPatients));
   };
 
   return (
