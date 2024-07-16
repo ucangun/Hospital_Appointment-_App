@@ -16,28 +16,30 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <PatientList
-        doctors={doctors}
-        setDoctors={setDoctors}
-        patients={patients}
-        setPatients={setPatients}
-        selectedDoctorId={selectedDoctorId}
-        setSelectedDoctorId={setSelectedDoctorId}
-        isCompleted={isCompleted}
-        setIsCompleted={setIsCompleted}
-      />
-      {selectedDoctorId && (
-        <AddPatient
+      <div className="bgContainer">
+        <PatientList
+          doctors={doctors}
+          setDoctors={setDoctors}
           patients={patients}
           setPatients={setPatients}
-          name={name}
-          setName={setName}
-          date={date}
-          setDate={setDate}
           selectedDoctorId={selectedDoctorId}
           setSelectedDoctorId={setSelectedDoctorId}
+          isCompleted={isCompleted}
+          setIsCompleted={setIsCompleted}
         />
-      )}
+        {selectedDoctorId && (
+          <AddPatient
+            patients={patients}
+            setPatients={setPatients}
+            name={name}
+            setName={setName}
+            date={date}
+            setDate={setDate}
+            selectedDoctorId={selectedDoctorId}
+            setSelectedDoctorId={setSelectedDoctorId}
+          />
+        )}
+      </div>
     </div>
   );
 };

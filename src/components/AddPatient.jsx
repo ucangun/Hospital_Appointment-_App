@@ -26,7 +26,7 @@ const AddPatient = ({
     setDate("");
   };
   return (
-    <>
+    <div className="formContainer">
       <form onSubmit={handleSubmit}>
         <div className="formAdd">
           <label htmlFor="patientName">Patient Name</label>
@@ -50,7 +50,7 @@ const AddPatient = ({
           Add Patient
         </button>
       </form>
-    </>
+    </div>
   );
 };
 

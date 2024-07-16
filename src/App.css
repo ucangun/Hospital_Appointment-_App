@@ -25,6 +25,7 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: var(--color-cerulean-blue);
   color: var(--color-gray);
+  padding: 2rem 1rem;
 }
 
 /* ---------------------------------- */
@@ -50,16 +51,19 @@ nav h1 {
   color: var(--color-white);
 }
 
+.bgContainer {
+  max-width: 80rem;
+  margin: 1rem auto;
+  background-color: var(--color-white);
+  padding: 3rem 3rem 2rem 0rem;
+  border-radius: 1rem;
+}
+
 /* ---------------------------------- */
 /*              CONTAINER             */
 /* ---------------------------------- */
 
 .container {
-  background-color: var(--color-white);
-  border-radius: 1rem;
-  padding: 3rem 3rem 2rem 0rem;
-  max-width: 80rem;
-  margin: 1rem auto;
   display: grid;
   grid-template-columns: 50% 50%;
   gap: 1rem;
@@ -74,7 +78,8 @@ nav h1 {
   padding: 1rem;
   width: 30%;
   cursor: pointer;
-  text-align: center;
+  align-self: flex-start;
+  margin-left: 3rem;
 }
 
 .doctors_container {
@@ -138,6 +143,15 @@ nav h1 {
 /*         PATIENTS CONTAINER         */
 /* ---------------------------------- */
 
+.patients_container {
+  max-height: 50rem;
+  overflow-y: auto;
+}
+
+.patients_container::-webkit-scrollbar {
+  display: none;
+}
+
 .patients_container h2 {
   text-align: center;
   margin-bottom: 1rem;
@@ -199,10 +213,17 @@ nav h1 {
 /*                FORM                */
 /* ---------------------------------- */
 
+.formContainer {
+  display: flex;
+  justify-content: flex-start;
+  padding: 2rem 4rem;
+}
+
 form {
-  width: 25rem;
+  width: 30rem;
   height: 20rem;
-  background-color: var(--color-seafoam-green);
+  background-color: var(--color-teal);
+  color: var(--color-white);
   border-radius: 1rem;
 
   display: flex;
