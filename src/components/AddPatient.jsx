@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import Data from "../helper/data";
 
 const AddPatient = ({
   name,
@@ -10,7 +11,7 @@ const AddPatient = ({
   selectedDoctorId,
 }) => {
   // Handle form submission to add a new patient
-  const handleSubmit = (e) => {
+  const handleSubmit = (e, doctorName) => {
     e.preventDefault();
     if (!name || !date) return;
 
@@ -24,17 +25,20 @@ const AddPatient = ({
       doctor: selectedDoctorId,
     };
 
-    const allPatients = JSON.parse(localStorage.getItem("patients")) || [];
-    const actualPatients = [...allPatients, newPatient];
+    const allPatients = JSON.parse(localStorage.getItem("patients")) || Data;
+    const updatedPatients = [...allPatients, newPatient];
+    const actualPatients = updatedPatients.filter(
+      (patient) => patient.doctor === doctorName
+    );
     setPatients(actualPatients);
-    localStorage.setItem("patients", JSON.stringify(actualPatients));
+    localStorage.setItem("patients", JSON.stringify(updatedPatients));
 
     setName("");
     setDate("");
   };
   return (
     <div className="formContainer">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={(e) => handleSubmit(e, selectedDoctorId)}>
         <div className="formAdd">
           <label htmlFor="patientName">Patient Name</label>
           <input

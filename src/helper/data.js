@@ -32,7 +32,7 @@ const Data = [
     text: "David Miller",
     day: "Dec 13th at 1:30pm",
     completed: true,
-    doctor: "Dr. James Black",
+    doctor: "Dr. Olivia Davis",
   },
   {
     id: 6,

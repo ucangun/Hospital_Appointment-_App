@@ -14,7 +14,7 @@ const Home = () => {
       const storedPatients = localStorage.getItem("patients");
       return storedPatients ? JSON.parse(storedPatients) : Data;
     } catch (error) {
-      console.error("Geçersiz JSON verisi:", error);
+      console.error("Error:", error);
       return Data;
     }
   });

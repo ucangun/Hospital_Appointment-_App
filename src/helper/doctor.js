@@ -37,16 +37,16 @@ const DataDoctors = [
   {
     id: 5,
     image: `${image5}`,
-    doctor: "Dr. James Black",
+    doctor: "Dr. Olivia Davis",
     description:
-      "Dr. James Black is a neurologist known for his research in neurological disorders.",
+      "Dr. Olivia Davis is a neurologist known for his research in neurological disorders.",
   },
   {
     id: 6,
     image: `${image6}`,
-    doctor: "Dr. Laura White",
+    doctor: "Dr. Jacob Martinez",
     description:
-      "Dr. Laura White specializes in dermatology and skincare treatments.",
+      "Dr. Jacob Martinez specializes in dermatology and skincare treatments.",
   },
 ];
 
