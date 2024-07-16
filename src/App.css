@@ -32,6 +32,42 @@ body {
   gap: 1rem;
 }
 
+form {
+  width: 25rem;
+  height: 20rem;
+  background-color: var(--color-seafoam-green);
+  border-radius: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.formAdd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.formAdd input {
+  width: 100%;
+
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 0.2rem;
+  border: none;
+}
+
+.btnSubmit {
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+}
+
 /* ---------------------------------- */
 /*          DOCTORS CONTAINER         */
 /* ---------------------------------- */
