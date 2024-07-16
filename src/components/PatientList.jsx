@@ -14,7 +14,7 @@ const PatientList = ({
     const selectedDoctor = doctors.find((doc) => doc.id === id);
     setDoctors([selectedDoctor]);
 
-    setSelectedDoctorId(id);
+    setSelectedDoctorId(doctorName);
 
     const actualPatients = patients.filter(
       (patient) => patient.doctor === doctorName

@@ -1,9 +1,33 @@
 import { useState } from "react";
+import Data from "../helper/data";
+import DataDoctors from "../helper/doctor";
 
-const AddPatient = ({ name, setName, date, setDate }) => {
+const AddPatient = ({
+  name,
+  setName,
+  date,
+  setDate,
+  patients,
+  setPatients,
+  selectedDoctorId,
+}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!name || !date) return;
+
+    const newPatient = {
+      id: crypto.randomUUID(),
+      text: name,
+      day: date,
+      completed: false,
+      doctor: selectedDoctorId,
+    };
+
+    const actualPatients = [...patients, newPatient];
+    setPatients(actualPatients);
+
+    setName("");
+    setDate("");
   };
   return (
     <>

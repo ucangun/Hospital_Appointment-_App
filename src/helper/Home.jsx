@@ -23,6 +23,8 @@ const Home = () => {
       />
       {selectedDoctorId && (
         <AddPatient
+          patients={patients}
+          setPatients={setPatients}
           name={name}
           setName={setName}
           date={date}
