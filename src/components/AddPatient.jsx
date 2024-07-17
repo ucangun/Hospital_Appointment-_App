@@ -35,29 +35,31 @@ const AddPatient = ({ setPatients, selectedDoctorId }) => {
   };
   return (
     <div className="formContainer">
-      <form onSubmit={(e) => handleSubmit(e, selectedDoctorId)}>
-        <div className="formAdd">
-          <label htmlFor="patientName">Patient Name</label>
-          <input
-            type="text"
-            id="patientName"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
-        <div className="formAdd">
-          <label htmlFor="date">Day & Time</label>
-          <input
-            type="datetime-local"
-            id="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-          />
-        </div>
-        <button type="submit" className="btnSubmit">
-          Add Patient
-        </button>
-      </form>
+      <div className="wrapper">
+        <form onSubmit={(e) => handleSubmit(e, selectedDoctorId)}>
+          <div className="formAdd">
+            <label htmlFor="patientName">Patient Name</label>
+            <input
+              type="text"
+              id="patientName"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+          <div className="formAdd">
+            <label htmlFor="date">Day & Time</label>
+            <input
+              type="datetime-local"
+              id="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+            />
+          </div>
+          <button type="submit" className="btnSubmit">
+            Add Patient
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
