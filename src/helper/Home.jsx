@@ -9,15 +9,10 @@ const Home = () => {
   // State to manage the list of doctors
   const [doctors, setDoctors] = useState(DataDoctors);
   // State to manage the list of patients
-  const [patients, setPatients] = useState(() => {
-    try {
-      const storedPatients = localStorage.getItem("patients");
-      return storedPatients ? JSON.parse(storedPatients) : Data;
-    } catch (error) {
-      console.error("Error:", error);
-      return Data;
-    }
-  });
+  const [patients, setPatients] = useState(
+    () => JSON.parse(localStorage.getItem("patients")) || Data
+  );
+
   // State to manage the selected doctor's ID
   const [selectedDoctorId, setSelectedDoctorId] = useState(null);
   // State to manage the completion status

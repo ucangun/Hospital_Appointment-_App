@@ -6,7 +6,6 @@ const AddPatient = ({
   setName,
   date,
   setDate,
-  patients,
   setPatients,
   selectedDoctorId,
 }) => {
