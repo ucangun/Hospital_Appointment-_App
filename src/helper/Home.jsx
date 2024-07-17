@@ -15,8 +15,6 @@ const Home = () => {
 
   // State to manage the selected doctor's ID
   const [selectedDoctorId, setSelectedDoctorId] = useState(null);
-  // State to manage the completion status
-  const [isCompleted, setIsCompleted] = useState(false);
 
   // State to manage the new patient's name and date
   const [name, setName] = useState("");
@@ -33,8 +31,6 @@ const Home = () => {
           setPatients={setPatients}
           selectedDoctorId={selectedDoctorId}
           setSelectedDoctorId={setSelectedDoctorId}
-          isCompleted={isCompleted}
-          setIsCompleted={setIsCompleted}
         />
         {selectedDoctorId && (
           <AddPatient
@@ -45,7 +41,6 @@ const Home = () => {
             date={date}
             setDate={setDate}
             selectedDoctorId={selectedDoctorId}
-            setSelectedDoctorId={setSelectedDoctorId}
           />
         )}
       </div>

@@ -8,8 +8,6 @@ const PatientList = ({
   setPatients,
   selectedDoctorId,
   setSelectedDoctorId,
-  isCompleted,
-  setIsCompleted,
 }) => {
   // Handle displaying appointments for a selected doctor
   const handleAppointment = (id, doctorName) => {
@@ -53,7 +51,7 @@ const PatientList = ({
         : patient
     );
     setPatients(actualPatients);
-    setIsCompleted(!isCompleted);
+    // setIsCompleted(!isCompleted);
     localStorage.setItem("patients", JSON.stringify(actualPatients));
   };
 
