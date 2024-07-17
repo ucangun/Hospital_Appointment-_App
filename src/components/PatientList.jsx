@@ -22,6 +22,7 @@ const PatientList = ({
     );
     setPatients(actualPatients);
   };
+
   // Handle returning to the homepage and resetting the doctor list
   const handleHomePage = () => {
     setDoctors(DataDoctors);
@@ -43,6 +44,7 @@ const PatientList = ({
       localStorage.setItem("patients", JSON.stringify(actualPatients));
     }
   };
+
   // Handle marking a patient's appointment as completed
   const handleComplete = (id) => {
     const actualPatients = patients.map((patient) =>

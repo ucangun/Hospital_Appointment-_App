@@ -16,10 +16,6 @@ const Home = () => {
   // State to manage the selected doctor's ID
   const [selectedDoctorId, setSelectedDoctorId] = useState(null);
 
-  // State to manage the new patient's name and date
-  const [name, setName] = useState("");
-  const [date, setDate] = useState("");
-
   return (
     <div>
       <Navbar />
@@ -36,10 +32,6 @@ const Home = () => {
           <AddPatient
             patients={patients}
             setPatients={setPatients}
-            name={name}
-            setName={setName}
-            date={date}
-            setDate={setDate}
             selectedDoctorId={selectedDoctorId}
           />
         )}

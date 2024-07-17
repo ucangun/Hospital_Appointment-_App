@@ -1,14 +1,12 @@
 import { format } from "date-fns";
 import Data from "../helper/data";
+import { useState } from "react";
 
-const AddPatient = ({
-  name,
-  setName,
-  date,
-  setDate,
-  setPatients,
-  selectedDoctorId,
-}) => {
+const AddPatient = ({ setPatients, selectedDoctorId }) => {
+  // State to manage the new patient's name and date
+  const [name, setName] = useState("");
+  const [date, setDate] = useState("");
+
   // Handle form submission to add a new patient
   const handleSubmit = (e, doctorName) => {
     e.preventDefault();

@@ -26,7 +26,6 @@ body {
   background-color: var(--color-cerulean-blue);
   color: var(--color-gray);
   padding: 2rem 1rem;
-  overflow-y: scroll;
 }
 
 /* ---------------------------------- */
