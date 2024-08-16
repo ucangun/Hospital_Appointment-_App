@@ -40,7 +40,7 @@ const DataDoctors = [
     doctor: "Dr. James Black",
 
     description:
-      "Dr. Dr. James Black is a neurologist known for his research in neurological disorders.",
+      "Dr. James Black is a neurologist known for his research in neurological disorders.",
   },
   {
     id: 6,
